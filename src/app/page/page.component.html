@@ -1,0 +1,46 @@
+<!-- page.component.html -->
+<div class="text-white">
+  <h1>choppy</h1>
+  <div class="section-container">
+    <div
+      *ngFor="let section of sections"
+      [ngClass]="section.cssClass"
+      class="section"
+    >
+      <h2 class="title text-left">{{ section.title }}</h2>
+      <div class="link-list text-left">
+        <div *ngFor="let link of section.info" class="link-item">
+          <div class="link-content">
+            <ng-container *ngIf="link.name">
+              <strong class="name">{{ link.name }}</strong>
+              <br />
+            </ng-container>
+            <ng-container *ngIf="link.description">
+              <p class="description">{{ link.description }}</p>
+            </ng-container>
+          </div>
+          <!-- Use ngIf to conditionally display the button -->
+          <ng-container *ngIf="link.link">
+            <div class="image-container">
+              <img
+                *ngIf="link.image"
+                [src]="link.image"
+                alt="Image"
+                class="image"
+              />
+            </div>
+            <!-- Check if the link starts with "https://github.com" to determine the button text -->
+            <ng-container
+              *ngIf="link.link.startsWith('https://github.com'); else otherLink"
+            >
+              <a href="{{ link.link }}" class="link-button">Repository</a>
+            </ng-container>
+            <ng-template #otherLink>
+              <a href="{{ link.link }}" class="link-button">Page</a>
+            </ng-template>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

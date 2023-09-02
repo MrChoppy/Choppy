@@ -1,0 +1,21 @@
+/* Create a container for the entire page */
+.page-container {
+    position: relative;
+    height: 100%;
+}
+
+
+/* Style the image at the bottom */
+.image {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    pointer-events: none;
+    /* Disable pointer events (non-interactive) */
+    cursor: default;
+    /* Set the default cursor (not clickable) */
+    user-select: none;
+    /* Prevent text selection */
+}
