@@ -15,7 +15,7 @@ export class PageComponent {
             "I'm Joseph, a developer with a passion for innovation and a love for turning ideas into digital reality.",
         },
       ],
-      cssClass: 'section1', // Add a class name for this section
+      cssClass: 'section1',
     },
 
     {
@@ -35,7 +35,7 @@ export class PageComponent {
         },
         { name: 'link 2', description: 'Desc link 2' },
       ],
-      cssClass: 'section2', // Add a class name for this section
+      cssClass: 'section2',
     },
     {
       title: 'Social',
@@ -44,10 +44,35 @@ export class PageComponent {
           name: 'Github',
           description: 'MrChoppy',
           link: 'https://github.com/MrChoppy',
-          image: 'https://example.com/image3.jpg',
+          image:
+            'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/github.svg?alt=media&token=0ab944fc-9c73-4f60-a087-7106ae4647d7',
+        },
+        {
+          name: 'E-Mail',
+          description: 'jhayek.professional@gmail.com',
+          link: '',
+          image:
+            'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/email.svg?alt=media&token=133e4053-d748-40d6-a439-8c91a0a6470b',
+        },
+        {
+          name: 'LinkedIn',
+          description: '',
+          link: 'https://www.linkedin.com/in/joseph-el-hayek-09350528b/',
+          image:
+            'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/linkedin.svg?alt=media&token=21fb5e8e-526e-4a52-9029-ae9ccbc251fd',
         },
       ],
-      cssClass: 'section1', // Add a class name for this section
+      cssClass: 'section3',
     },
   ];
+
+  sendEmail(event: Event, email: string) {
+    if (this.isValidEmail(email)) {
+      event.preventDefault(); // Prevent the default behavior of the link
+      window.location.href = 'mailto:' + email;
+    }
+  }
+  isValidEmail(email: string): boolean {
+    return email.includes('@');
+  }
 }

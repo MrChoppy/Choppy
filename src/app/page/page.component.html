@@ -1,44 +1,68 @@
 <!-- page.component.html -->
 <div class="text-white">
-  <h1>choppy</h1>
+  <div class="chop">
+    <span id="C">C</span>
+    <span id="H">H</span>
+    <span id="O">O</span>
+    <span id="P">P</span>
+    <span id="P">P</span>
+    <span id="Y">Y</span>
+  </div>
   <div class="section-container">
     <div
       *ngFor="let section of sections"
       [ngClass]="section.cssClass"
       class="section"
     >
-      <h2 class="title text-left">{{ section.title }}</h2>
-      <div class="link-list text-left">
-        <div *ngFor="let link of section.info" class="link-item">
-          <div class="link-content">
-            <ng-container *ngIf="link.name">
-              <strong class="name">{{ link.name }}</strong>
-              <br />
-            </ng-container>
-            <ng-container *ngIf="link.description">
-              <p class="description">{{ link.description }}</p>
-            </ng-container>
-          </div>
-          <!-- Use ngIf to conditionally display the button -->
-          <ng-container *ngIf="link.link">
-            <div class="image-container">
-              <img
-                *ngIf="link.image"
-                [src]="link.image"
-                alt="Image"
-                class="image"
-              />
-            </div>
-            <!-- Check if the link starts with "https://github.com" to determine the button text -->
-            <ng-container
-              *ngIf="link.link.startsWith('https://github.com'); else otherLink"
-            >
-              <a href="{{ link.link }}" class="link-button">Repository</a>
-            </ng-container>
-            <ng-template #otherLink>
-              <a href="{{ link.link }}" class="link-button">Page</a>
-            </ng-template>
+      <h2 class="title text-left" *ngIf="section.title">{{ section.title }}</h2>
+      <div class="text-left">
+        <div *ngFor="let item of section.info">
+          <!-- If item has image use this template else use the noImage template  -->
+          <ng-container *ngIf="item.image; else noImage">
+            <a [href]="item.link" (click)="sendEmail($event, item.description)">
+              <div class="item-content item-link">
+                <div class="item-image-container">
+                  <img
+                    *ngIf="item.image"
+                    [src]="item.image"
+                    alt="Image"
+                    class="item-image"
+                  />
+                </div>
+                <div class="item-info">
+                  <strong class="name">{{ item.name }}</strong>
+                  <p
+                    class="description"
+                    [ngClass]="{
+                      'email-description': isValidEmail(item.description)
+                    }"
+                    *ngIf="item.description"
+                  >
+                    {{ item.description }}
+                  </p>
+                </div>
+              </div>
+            </a>
           </ng-container>
+          <ng-template #noImage>
+            <div class="item-content">
+              <div class="item-info">
+                <strong class="name" *ngIf="item.name">{{ item.name }}</strong>
+                <p class="description">
+                  {{ item.description }}
+                </p>
+                <ng-container *ngIf="item.link">
+                  <a [href]="item.link" class="item-button">
+                    {{
+                      item.link.startsWith("https://github.com")
+                        ? "Repo"
+                        : "Page"
+                    }}
+                  </a>
+                </ng-container>
+              </div>
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>

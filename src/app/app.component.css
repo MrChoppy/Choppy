@@ -1,7 +1,13 @@
 /* Create a container for the entire page */
 .page-container {
     position: relative;
-    height: 100%;
+    max-width: 100%;
+    /* Set a maximum width for the container */
+    max-height: 100vh;
+    /* Set a maximum height using viewport height (100% of the viewport height) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -9,13 +15,12 @@
 .image {
     display: flex;
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically */
     pointer-events: none;
-    /* Disable pointer events (non-interactive) */
     cursor: default;
-    /* Set the default cursor (not clickable) */
     user-select: none;
-    /* Prevent text selection */
+    max-width: 100%;
+    /* Set a maximum width for the image */
+    height: auto;
+    /* Ensure the image maintains its aspect ratio */
 }
