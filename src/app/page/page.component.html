@@ -24,7 +24,7 @@
                 <div class="item-info">
                   <strong class="name">{{ item.name }}</strong>
                   <p
-                    class="description"
+                    class="description notranslate"
                     [ngClass]="{
                       'email-description': isValidEmail(item.description)
                     }"
@@ -39,7 +39,9 @@
           <ng-template #noImage>
             <div class="item-content">
               <div class="item-info">
-                <strong class="name" *ngIf="item.name">{{ item.name }}</strong>
+                <strong class="name" *ngIf="item.name" translate="no">{{
+                  item.name
+                }}</strong>
                 <p class="description">
                   {{ item.description }}
                 </p>

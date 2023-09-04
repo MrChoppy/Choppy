@@ -35,7 +35,8 @@ export class PageComponent {
         },
         {
           name: 'Seshat',
-          description: 'Remade the ChoppySorter but a lot better and in c#',
+          description:
+            'Remade the ChoppySorter but a lot better and in c#. Simple UI to get the job done. Might add some functionalities if any idea comes to mind.',
           link: 'https://github.com/MrChoppy/Seshat',
         },
       ],
