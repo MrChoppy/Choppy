@@ -33,7 +33,11 @@ export class PageComponent {
             'Organizes files in a directory based on their file extensions',
           link: 'https://github.com/MrChoppy/ChoppySorter',
         },
-        { name: 'link 2', description: 'Desc link 2' },
+        {
+          name: 'Seshat',
+          description: 'Remade the ChoppySorter but a lot better and in c#',
+          link: 'https://github.com/MrChoppy/Seshat',
+        },
       ],
       cssClass: 'section2',
     },
