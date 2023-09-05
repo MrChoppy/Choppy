@@ -45,14 +45,16 @@
                 <p class="description">
                   {{ item.description }}
                 </p>
-                <ng-container *ngIf="item.link">
-                  <a [href]="item.link" class="item-button">
-                    {{
-                      item.link.startsWith("https://github.com")
-                        ? "Repo"
-                        : "Page"
-                    }}
-                  </a>
+                <ng-container *ngIf="item.links && item.links.length > 0">
+                  <div class="item-links">
+                    <a
+                      *ngFor="let link of item.links"
+                      [href]="link.url"
+                      class="item-button"
+                    >
+                      {{ link.text }}
+                    </a>
+                  </div>
                 </ng-container>
               </div>
             </div>

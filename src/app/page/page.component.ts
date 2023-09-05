@@ -25,19 +25,39 @@ export class PageComponent {
           name: 'Written and signed',
           description:
             'A simple yet elegant and immersive website for your daily poems & quotes',
-          link: 'https://writtenandsigned.com/',
+          links: [
+            {
+              text: 'Page',
+              url: 'https://writtenandsigned.com/',
+            },
+          ],
         },
         {
           name: 'ChoppySorter',
           description:
             'Organizes files in a directory based on their file extensions',
-          link: 'https://github.com/MrChoppy/ChoppySorter',
+          links: [
+            {
+              text: 'Repo',
+              url: 'https://github.com/MrChoppy/ChoppySorter',
+            },
+          ],
         },
         {
           name: 'Seshat',
           description:
             'Remade the ChoppySorter but a lot better and in c#. Simple UI to get the job done. Might add some functionalities if any idea comes to mind.',
-          link: 'https://github.com/MrChoppy/Seshat',
+          links: [
+            {
+              text: 'Repo',
+              url: 'https://github.com/MrChoppy/Seshat',
+            },
+            {
+              text: 'Page',
+              url: 'https://seshat.choppy.zip/',
+            },
+            // Add more links as needed
+          ],
         },
       ],
       cssClass: 'section2',

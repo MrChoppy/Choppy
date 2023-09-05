@@ -184,6 +184,7 @@
     padding: 2px 20px;
     font-weight: 600;
     color: black;
+    margin-left: 5px;
 }
 
 .item-button:hover {
