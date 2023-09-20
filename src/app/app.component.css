@@ -1,0 +1,17 @@
+#cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 30px #fff, 0 0 60px #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.5s;
+    z-index: 99;
+}
+
+body:hover #cursor {
+    opacity: 1;
+}

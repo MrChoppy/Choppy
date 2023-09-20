@@ -1,0 +1,30 @@
+<div class="page">
+  <a routerLink="/" class="back-button">Go Back</a>
+  <div id="bg"></div>
+  <div class="carousel">
+    <div class="item" *ngFor="let project of projects; let i = index">
+      <div
+        class="carousel-item"
+        (mouseenter)="showSpeechBubble(i)"
+        (mouseleave)="hideSpeechBubble()"
+      >
+        <div class="carousel-box">
+          <div class="title">{{ project.title }}</div>
+          <div class="num">{{ i + 1 }}</div>
+          <img [src]="project.imageUrl" alt="{{ project.title }}" />
+        </div>
+        <!-- Use *ngFor to iterate over links and generate buttons -->
+        <div class="button-container">
+          <ng-container *ngFor="let link of project.links; let j = index">
+            <a class="button" [href]="link.url">{{ link.text }}</a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="showBubble && activeProject !== -1" class="speech-bubble">
+      {{ projects[activeProject].description }}
+    </div>
+  </div>
+  <div id="cursor"></div>
+</div>
+<app-loading *ngIf="isLoading"></app-loading>

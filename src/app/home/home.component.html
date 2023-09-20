@@ -1,0 +1,22 @@
+<div class="page">
+  <div id="bg"></div>
+  <div class="container-title">
+    <img src="assets/CHOPPY.svg" alt="CHOPPY" class="image-title" />
+  </div>
+  <div class="container-line"></div>
+  <div class="container-menu">
+    <ul class="ul">
+      <li class="li">
+        <a routerLink="/about" class="effect-underline">About</a>
+      </li>
+      <li class="li">
+        <a routerLink="/projects" class="effect-underline">Projects</a>
+      </li>
+      <li class="li">
+        <a routerLink="/social" class="effect-underline">Socials</a>
+      </li>
+    </ul>
+  </div>
+  <div id="cursor"></div>
+</div>
+<app-loading *ngIf="isLoading"></app-loading>

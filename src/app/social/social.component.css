@@ -1,0 +1,99 @@
+.page {
+    border: 1px solid #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 90%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.back-button {
+    position: absolute;
+    top: -2px;
+    /* Adjust top position as needed */
+    left: -2px;
+    /* Adjust left position as needed */
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    /* Add a border here */
+    border-radius: 5px;
+    cursor: none;
+    z-index: 9;
+    user-select: none;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.social {
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    font-size: 2vh;
+    padding: 10px;
+
+}
+
+.social-item {
+    margin: 2vw;
+}
+
+.social-content {
+    display: flex;
+    align-items: center;
+    cursor: none;
+}
+
+.social-content:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.296);
+    border-radius: 10px;
+}
+
+.social-item a {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit text color */
+}
+
+
+.social-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 10vw;
+    /* Adjust image width based on viewport width */
+    height: auto;
+}
+
+.image-container {
+    width: 10vw;
+    /* Adjust container width based on viewport width */
+    margin-right: 2vw;
+
+}
+
+.txt-content {
+    flex-direction: column;
+}
+
+::selection {
+    background-color: white;
+    /* Background color of the selected text */
+    color: black;
+    /* Text color of the selected text */
+}

@@ -1,0 +1,25 @@
+<div class="page">
+  <a routerLink="/" class="back-button">Go Back</a>
+  <div id="bg"></div>
+  <div class="social">
+    <div *ngFor="let item of social" class="social-item">
+      <a
+        [href]="item.link"
+        (click)="sendEmail($event, item.description)"
+        target="_blank"
+      >
+        <div class="social-content">
+          <div class="image-container">
+            <img [src]="item.image" alt="{{ item.name }}" />
+          </div>
+          <div class="txt-content">
+            <p>{{ item.name }}</p>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div id="cursor"></div>
+<app-loading *ngIf="isLoading"></app-loading>
