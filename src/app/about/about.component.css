@@ -51,3 +51,16 @@
     color: black;
     /* Text color of the selected text */
 }
+
+@media screen and (max-width: 800px) {
+    .about {
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    #cursor {
+        opacity: 0;
+    }
+}
