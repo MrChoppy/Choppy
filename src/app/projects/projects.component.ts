@@ -160,6 +160,10 @@ export class ProjectsComponent implements AfterViewInit {
         'A simple yet elegant and immersive website for your daily poems & quotes',
       links: [
         {
+          text: 'Repo',
+          url: 'https://github.com/MrChoppy/WrittenAndSIgned',
+        },
+        {
           text: 'Page',
           url: 'https://writtenandsigned.com/',
         },
@@ -168,22 +172,26 @@ export class ProjectsComponent implements AfterViewInit {
         'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/wns.png?alt=media&token=6097a3bd-980e-46d0-96dd-dfa0577282ee',
     },
     {
-      title: 'ChoppySorter',
+      title: 'Mercury',
       description:
-        'Organizes files in a directory based on their file extensions',
+        'Game where you have to type the word that appears on the bottom of the screen before the tower reaches the top',
       links: [
         {
           text: 'Repo',
-          url: 'https://github.com/MrChoppy/ChoppySorter',
+          url: 'https://github.com/MrChoppy/mercury',
+        },
+        {
+          text: 'Page',
+          url: 'https://mercury.choppy.zip/',
         },
       ],
       imageUrl:
-        'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/cs.png?alt=media&token=48fb3856-d8f5-435b-b059-a06f1a08734a',
+        'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/mercury.png?alt=media&token=63671060-b973-4b7b-a0df-03659ea10b53',
     },
     {
       title: 'Seshat',
       description:
-        'Remade the ChoppySorter but a lot better and in c#. Simple UI to get the job done. Might add some functionalities if any idea comes to mind.',
+        'Done in C#. Sorts files from a source directory to a destination directory depending on the extension',
       links: [
         {
           text: 'Repo',
