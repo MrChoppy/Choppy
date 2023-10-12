@@ -157,7 +157,7 @@ export class ProjectsComponent implements AfterViewInit {
     {
       title: 'Written and signed',
       description:
-        'A simple yet elegant and immersive website for your daily poems & quotes',
+        'Done with Angular and firebase. A simple yet elegant and immersive website for your daily poems & quotes',
       links: [
         {
           text: 'Repo',
@@ -174,7 +174,7 @@ export class ProjectsComponent implements AfterViewInit {
     {
       title: 'Mercury',
       description:
-        'Game where you have to type the word that appears on the bottom of the screen before the tower reaches the top',
+        'Done with Angular. Mercury is a game in which you have to type the word that appears on the bottom of the screen before the tower reaches the top',
       links: [
         {
           text: 'Repo',
@@ -204,6 +204,23 @@ export class ProjectsComponent implements AfterViewInit {
       ],
       imageUrl:
         'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/Seshat.png?alt=media&token=cac39bc4-6ff9-445c-a5b3-6539bca51595',
+    },
+    {
+      title: 'Papyrus',
+      description:
+        'Done with Flutter and firebase. Papyrus is a webapp in which you have to log in and you can create notes and organize them',
+      links: [
+        {
+          text: 'Repo',
+          url: 'https://github.com/MrChoppy/Papyrus',
+        },
+        {
+          text: 'Page',
+          url: 'https://papyrus.choppy.zip/',
+        },
+      ],
+      imageUrl:
+        'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/favicon.png?alt=media&token=feae74ca-49f3-40c0-99b8-f2f1be4f52c8',
     },
   ];
 }
