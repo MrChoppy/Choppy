@@ -1,7 +1,7 @@
 <div class="page">
   <a routerLink="/" class="back-button">Go Back</a>
   <div id="bg"></div>
-  <div class="carousel">
+  <div *ngIf="!projectsLoading" class="carousel">
     <div class="item" *ngFor="let project of projects; let i = index">
       <div
         class="carousel-item"

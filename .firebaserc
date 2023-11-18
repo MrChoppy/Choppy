@@ -1,5 +1,21 @@
 {
   "projects": {
     "default": "choppy-b93b4"
+  },
+  "targets": {
+    "choppy-b93b4": {
+      "hosting": {
+        "choppy": [
+          "choppy-b93b4"
+        ]
+      }
+    },
+    "janus-9501b": {
+      "hosting": {
+        "choppy": [
+          "janus-9501b"
+        ]
+      }
+    }
   }
 }

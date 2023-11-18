@@ -27,7 +27,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["node_modules/particles.js/particles.js"]
+            "scripts": [
+              "node_modules/particles.js/particles.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -89,7 +91,16 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": ["node_modules/particles.js/particles.js"]
+            "scripts": [
+              "node_modules/particles.js/particles.js"
+            ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2,
+            "browserTarget": "choppy:build:production"
           }
         }
       }

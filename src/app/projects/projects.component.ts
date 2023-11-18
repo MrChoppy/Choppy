@@ -6,6 +6,8 @@ import {
   AfterViewInit,
   Renderer2,
 } from '@angular/core';
+import { ProjectService } from '../project.service';
+import { ActivatedRoute } from '@angular/router';
 declare var particlesJS: any;
 @Component({
   selector: 'app-projects',
@@ -19,19 +21,27 @@ export class ProjectsComponent implements AfterViewInit {
   private startX = 0;
   private active = 0;
   private isDown = false;
-  private readonly speedWheel = 0.5;
+  private readonly speedWheel = 0.2;
   private readonly speedDrag = -0.1;
   private items: HTMLElement[] | undefined;
   private cursors: HTMLElement[] | undefined;
   isLoading: boolean = true;
-
+  projects!: any[];
+  projectsLoading: boolean = true;
   constructor(
     private el: ElementRef,
     private http: HttpClient,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private route: ActivatedRoute
   ) {}
 
   public ngOnInit(): void {
+    this.route.data.subscribe((data) => {
+      this.projects = data['projects'];
+      this.projectsLoading = false;
+      console.log(this.projects);
+    });
+
     this.initParticles();
     setTimeout(() => {
       this.isLoading = false;
@@ -152,75 +162,4 @@ export class ProjectsComponent implements AfterViewInit {
     this.activeProject = 0;
     this.showBubble = false;
   }
-
-  projects = [
-    {
-      title: 'Written and signed',
-      description:
-        'Done with Angular and firebase. A simple yet elegant and immersive website for your daily poems & quotes',
-      links: [
-        {
-          text: 'Repo',
-          url: 'https://github.com/MrChoppy/WrittenAndSIgned',
-        },
-        {
-          text: 'Page',
-          url: 'https://writtenandsigned.com/',
-        },
-      ],
-      imageUrl:
-        'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/wns.png?alt=media&token=6097a3bd-980e-46d0-96dd-dfa0577282ee',
-    },
-    {
-      title: 'Mercury',
-      description:
-        'Done with Angular. Mercury is a game in which you have to type the word that appears on the bottom of the screen before the tower reaches the top',
-      links: [
-        {
-          text: 'Repo',
-          url: 'https://github.com/MrChoppy/mercury',
-        },
-        {
-          text: 'Page',
-          url: 'https://mercury.choppy.zip/',
-        },
-      ],
-      imageUrl:
-        'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/mercury.png?alt=media&token=63671060-b973-4b7b-a0df-03659ea10b53',
-    },
-    {
-      title: 'Seshat',
-      description:
-        'Done in C#. Sorts files from a source directory to a destination directory depending on the extension',
-      links: [
-        {
-          text: 'Repo',
-          url: 'https://github.com/MrChoppy/Seshat',
-        },
-        {
-          text: 'Page',
-          url: 'https://seshat.choppy.zip/',
-        },
-      ],
-      imageUrl:
-        'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/Seshat.png?alt=media&token=cac39bc4-6ff9-445c-a5b3-6539bca51595',
-    },
-    {
-      title: 'Papyrus',
-      description:
-        'Done with Flutter and firebase. Papyrus is a webapp in which you have to log in and you can create notes and organize them',
-      links: [
-        {
-          text: 'Repo',
-          url: 'https://github.com/MrChoppy/Papyrus',
-        },
-        {
-          text: 'Page',
-          url: 'https://papyrus.choppy.zip/',
-        },
-      ],
-      imageUrl:
-        'https://firebasestorage.googleapis.com/v0/b/choppy-b93b4.appspot.com/o/favicon.png?alt=media&token=feae74ca-49f3-40c0-99b8-f2f1be4f52c8',
-    },
-  ];
 }
