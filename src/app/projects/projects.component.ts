@@ -38,8 +38,10 @@ export class ProjectsComponent implements AfterViewInit {
   public ngOnInit(): void {
     this.route.data.subscribe((data) => {
       this.projects = data['projects'];
+      this.projects = this.projects
+        .filter((project) => project.show)
+        .sort((a, b) => a.order - b.order);
       this.projectsLoading = false;
-      console.log(this.projects);
     });
 
     this.initParticles();
